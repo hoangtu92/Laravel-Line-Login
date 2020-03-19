@@ -1,12 +1,12 @@
 {
     "name": "hoangtu92/laravel-line-login",
-    "type": "project",
+    "type": "library",
     "description": "Laravel LINE login plugin",
     "keywords": [
         "framework",
         "laravel",
-		"line",
-		"login"
+        "line",
+        "login"
     ],
     "license": "MIT",
     "require": {
@@ -23,7 +23,7 @@
     "autoload": {
         "psr-4": {
             "Hoangtu92\\LaravelLineLogin\\": "src"
-        },
+        }
        
     }
 }
