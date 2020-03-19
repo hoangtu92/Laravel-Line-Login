@@ -1,0 +1,29 @@
+{
+    "name": "hoangtu92/laravel-line-login",
+    "type": "project",
+    "description": "Laravel LINE login plugin",
+    "keywords": [
+        "framework",
+        "laravel",
+		"line",
+		"login"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.2.5",
+        "laravel/framework": "^7.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Hoangtu92\\LaravelLineLogin\\": "src"
+        },
+       
+    }
+}
