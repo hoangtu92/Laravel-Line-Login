@@ -14,7 +14,6 @@ class LineAPIService {
     public function accessToken($code){
       $lineAPI = new LineAPI;
       $json_result = json_decode(self::getClient($lineAPI->accessToken($code, env('LINE_CHANNEL_ID'), env('LINE_CHANNEL_SECRET'), env('LINE_CALLBACK_URL'))), true);
-      var_dump($json_result);
       return array(
         $json_result['scope'],
         $json_result['access_token'],
