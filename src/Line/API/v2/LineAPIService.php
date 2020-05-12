@@ -67,7 +67,7 @@ class LineAPIService {
 
     public static function getLineWebLoginUrl($state) {
         $encodedCallbackUrl = urlencode(env('LINE_CALLBACK_URL'));
-        return "https://access.line.me/dialog/oauth/weblogin?response_type=code" . "&client_id=" . env('LINE_CHANNEL_ID') . "&redirect_uri=" . $encodedCallbackUrl . "&state=" . $state;
+        return "https://access.line.me/dialog/oauth/weblogin?response_type=code&scope=profile%20openid%20email" . "&client_id=" . env('LINE_CHANNEL_ID') . "&redirect_uri=" . $encodedCallbackUrl . "&state=" . $state;
     }
 
     private function getClient($data){
