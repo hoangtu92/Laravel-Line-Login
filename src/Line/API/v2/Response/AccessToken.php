@@ -6,6 +6,7 @@ class AccessToken
 {
     var $scope;
     var $access_token;
+    var $id_token;
     var $token_type;
     var $expires_in;
     var $refresh_token;
@@ -16,6 +17,7 @@ class AccessToken
       $this->token_type = $data[2];
       $this->expires_in = $data[3];
       $this->refresh_token = $data[4];
+      $this->id_token = $data[5];
     }
 
     public function scope(){
@@ -36,5 +38,8 @@ class AccessToken
 
     public function refresh_token(){
       return $this->refresh_token;
+    }
+    public function id_token(){
+      return $this->id_token;
     }
 }

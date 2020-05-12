@@ -35,7 +35,7 @@ class LineAPI {
 
   public function verify($access_token){
     return array(
-      'Url' => 'https://api.line.me/v2/oauth/verify',
+      'Url' => 'https://api.line.me/oauth2/v2.1/verify',
       'Method' => 'post',
       'Header' => 'Content-Type: application/x-www-form-urlencoded',
       'Body' => array(
@@ -45,7 +45,7 @@ class LineAPI {
 
   public function revoke($refresh_token){
     return array(
-      'Url' => 'https://api.line.me/v2/oauth/revoke',
+      'Url' => 'https://api.line.me/oauth2/v2.1/revoke',
       'Method' => 'post',
       'Header' => 'Content-Type: application/x-www-form-urlencoded',
       'Body' => array(
@@ -59,5 +59,16 @@ class LineAPI {
       'Method' => 'get',
       'Header' => 'Authorization: ' . $bearer
     );
+  }
+
+  public function verifyIdToken($id_token){
+    return array(
+      'Url' => 'https://api.line.me/oauth2/v2.1/verify',
+      'Method' => 'post',
+      'Header' => 'Content-Type: application/x-www-form-urlencoded',
+      'Body' => array(
+            urlencode('id_token')=>urlencode($access_token),
+            urlencode('client_id')=>urlencode(env('LINE_CHANNEL_ID')),
+    ));
   }
 }

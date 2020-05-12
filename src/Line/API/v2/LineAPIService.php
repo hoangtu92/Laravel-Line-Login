@@ -19,7 +19,9 @@ class LineAPIService {
         $json_result['access_token'],
         $json_result['token_type'],
         $json_result['expires_in'],
-        $json_result['refresh_token']);
+        $json_result['refresh_token'],
+        $json_result['id_token']
+      );
     }
 
     public function refreshToken($refresh_token){
@@ -30,7 +32,8 @@ class LineAPIService {
         $json_result['access_token'],
         $json_result['token_type'],
         $json_result['expires_in'],
-        $json_result['refresh_token']);
+        $json_result['refresh_token']
+      );
     }
 
     public function verify($accessToken){
@@ -63,6 +66,21 @@ class LineAPIService {
             "pictureUrl" => $json_result['pictureUrl'],
             "statusMessage" => $json_result['statusMessage']
         ];
+    }
+
+    public function verifyIdToken($id_token){
+      $lineAPI = new LineAPI;
+        $json_result = json_decode(self::getClient($lineAPI->verifyIdToken($id_token)), true);
+
+        if (!array_key_exists('statusMessage', $json_result)) {
+            $json_result['statusMessage'] = " ";
+        }
+        return [
+            "name" => $json_result['name'],
+            "pictureUrl" => $json_result['picture'],
+            "email" => $json_result['email']
+        ];
+      
     }
 
     public static function getLineWebLoginUrl($state) {
