@@ -8,7 +8,7 @@ class LineAPI {
 
   public function accessToken($code, $channelId, $channelSecret, $callback_url){
     return array(
-      'Url' => 'https://api.line.me/v2/oauth/accessToken',
+      'Url' => 'https://api.line.me/oauth2/v2.1/token',
       'Method' => 'post',
       'Header' => 'Content-Type: application/x-www-form-urlencoded',
       'Body' => array(
@@ -22,7 +22,7 @@ class LineAPI {
 
   public function refreshToken($refresh_token, $channelId, $channelSecret){
     return array(
-      'Url' => 'https://api.line.me/v2/oauth/accessToken',
+      'Url' => 'https://api.line.me/oauth2/v2.1/token',
       'Method' => 'post',
       'Header' => 'Content-Type: application/x-www-form-urlencoded',
       'Body' => array(
