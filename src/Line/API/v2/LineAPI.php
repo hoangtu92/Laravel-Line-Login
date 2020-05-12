@@ -67,7 +67,7 @@ class LineAPI {
       'Method' => 'post',
       'Header' => 'Content-Type: application/x-www-form-urlencoded',
       'Body' => array(
-            urlencode('id_token')=>urlencode($access_token),
+            urlencode('id_token')=>urlencode($id_token),
             urlencode('client_id')=>urlencode(env('LINE_CHANNEL_ID')),
     ));
   }
